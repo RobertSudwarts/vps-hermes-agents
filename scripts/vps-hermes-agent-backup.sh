@@ -16,6 +16,14 @@ for agent in bramble eric; do
     "netcup:/srv/hermes-hub/state/profiles/$agent/SOUL.md" \
     "$backup/$agent/profile/"
 
+  step="copying $agent memories"
+  rsync -aH --safe-links \
+    --include='/MEMORY.md' \
+    --include='/USER.md' \
+    --exclude='*' \
+    "netcup:/srv/hermes-hub/state/profiles/$agent/memories/" \
+    "$backup/$agent/profile/memories/"
+
   step="copying $agent skills"
   rsync -aH --safe-links \
     --exclude='.usage.json*' \
