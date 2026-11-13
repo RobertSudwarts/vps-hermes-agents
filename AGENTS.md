@@ -69,6 +69,7 @@ The local backup destination is `/data/vps-agent-backups/`.
 Back up only:
 
 - each agent’s `SOUL.md`;
+- each agent’s `memories/MEMORY.md` and `memories/USER.md`;
 - each agent’s `skills/`;
 - both vaults.
 
@@ -79,4 +80,3 @@ The vault rsync operation uses `--delete-delay`, so deleted VPS vault files are 
 ## Further documentation
 
 Keep detailed architecture, backup instructions, restore notes, and operational commands in `docs/`. Keep this file concise and current.
-

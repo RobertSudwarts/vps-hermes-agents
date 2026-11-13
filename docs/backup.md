@@ -5,6 +5,7 @@
 This backup preserves the material that gives Bramble and Eric their useful long-term identity and working knowledge:
 
 - each agent’s `SOUL.md`;
+- each agent’s `memories/MEMORY.md` and `memories/USER.md`;
 - each agent’s learned `skills/`;
 - each agent’s vault.
 
@@ -31,11 +32,17 @@ The local result is:
 ├── bramble/
 │   ├── profile/
 │   │   ├── SOUL.md
+│   │   ├── memories/
+│   │   │   ├── MEMORY.md
+│   │   │   └── USER.md
 │   │   └── skills/
 │   └── vault/
 └── eric/
     ├── profile/
     │   ├── SOUL.md
+    │   ├── memories/
+    │   │   ├── MEMORY.md
+    │   │   └── USER.md
     │   └── skills/
     └── vault/
 ```
@@ -51,7 +58,7 @@ From the local operations workspace:
 The script uses `rsync` over SSH. It should complete without `sudo`, passwords in scripts, or remote write access.
 
 The script stops at the first failed step and reports which copy failed. Only
-`Backup completed for bramble and eric.` means all six transfers succeeded.
+`Backup completed for bramble and eric.` means all eight transfers succeeded.
 After a failure, earlier copies may have updated locally while later ones did
 not; rerun the script after resolving the error.
 
@@ -67,7 +74,7 @@ This means the local vaults are mirrors of the VPS vaults:
 
 This is intentional, but it means the local backup is not historical version retention. An accidental deletion on the VPS will be reflected locally during the next successful backup.
 
-The profile `SOUL.md` and `skills/` copies do not use deletion mirroring. They are retained locally unless deliberately removed.
+The profile `SOUL.md`, `memories/` and `skills/` copies do not use deletion mirroring. They are retained locally unless deliberately removed. Only `MEMORY.md` and `USER.md` are copied from each `memories/` directory; other files there are excluded.
 
 ## Access model
 
@@ -100,7 +107,7 @@ A vault restoration should be treated as a deliberate recovery operation:
 
 1. Stop the Hermes Hub container first.
 2. Preserve or rename the current target directory before overwriting it.
-3. Restore only the required agent’s vault, SOUL file or skills.
+3. Restore only the required agent’s vault, SOUL file, memory files or skills.
 4. Restore ownership to the `hermes` user where necessary.
 5. Start the container and verify the relevant agent can read its vault and retains the expected identity.
 
