@@ -187,6 +187,8 @@ See `backup.md` for scope, exclusions, restoration principles and mirroring beha
 ## Updating the Hermes image
 
 Updating Hermes is a deliberate maintenance task, not a routine command.
+See [Updating the Hermes Hub image](image-updates.md) for the release policy,
+pre-update checks, state-snapshot caveat and post-update verification.
 
 Before an update:
 
