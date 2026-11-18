@@ -57,7 +57,10 @@ gateways for `bramble` or `eric`.
 
 - Eric’s vault root is `/vault/eric`.
 - His protected factual source record is `/vault/eric/CV/reference/CV/source/`.
-- `/vault/eric/CV/workflow-design.md` records the current career-support workflow.
+- `/vault/eric/workflow-design.md` records the current career-support workflow.
+- Keep Eric's career skills layered: short routing guides govern routine CV
+  follow-ups and pipeline snapshots, while detailed drafting, assessment,
+  source-onboarding and outreach procedures are loaded only when applicable.
 - Tailoring must not alter protected source material.
 - Eric may produce fresh, truthful role-specific CV prose, but must not invent qualifications, responsibilities, results, or proficiency.
 - Rob’s German is not sufficient for professional German-language work. Exclude roles where German is explicitly mandatory; flag uncertainty when it is merely preferred or unspecified.

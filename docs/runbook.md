@@ -176,7 +176,7 @@ Eric must write generated application outputs outside his protected factual sour
 Run the local content backup from the development machine:
 
 ```bash
-~/Documents/Codex/vps-hermes-agent-hub/scripts/vps-hermes-agent-backup.sh
+~/Documents/Codex/vps-hermes-agent-hub/scripts/backup.sh
 ```
 
 Confirm that it prints `Backup completed for bramble and eric.`. If it reports

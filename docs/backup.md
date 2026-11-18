@@ -15,11 +15,14 @@ This is a content-and-capability backup, not a complete bare-metal restoration o
 
 ## Backup source and destination
 
-The backup runs from Rob’s development machine and pulls data from the VPS over SSH.
+The backup runs from Rob’s development machine and pulls data from the VPS over
+SSH. Its remote `rsync` process runs inside the existing Hub container as the
+unprivileged `hermes` user. This lets it read Hermes-owned files regardless of
+their creation mode, without granting the host SSH user broad access.
 
 | Item | Location |
 |---|---|
-| Local backup script | `scripts/vps-hermes-agent-backup.sh` |
+| Local backup script | `scripts/backup.sh` |
 | VPS SSH host alias | `netcup` |
 | VPS Hub state | `/srv/hermes-hub/state/profiles/` |
 | VPS vaults | `/srv/hermes-hub/vault/` |
@@ -52,10 +55,12 @@ The local result is:
 From the local operations workspace:
 
 ```bash
-./scripts/vps-hermes-agent-backup.sh
+./scripts/backup.sh
 ```
 
-The script uses `rsync` over SSH. It should complete without `sudo`, passwords in scripts, or remote write access.
+The script uses `rsync` over SSH, with the remote process executed as UID/GID
+`988` in `hermes-hub-agent-1`. The derived Hub image must include `rsync`.
+It should complete without `sudo`, passwords in scripts, or remote write access.
 
 The script stops at the first failed step and reports which copy failed. Only
 `Backup completed for bramble and eric.` means all eight transfers succeeded.
@@ -78,16 +83,15 @@ The profile `SOUL.md`, `memories/` and `skills/` copies do not use deletion mirr
 
 ## Access model
 
-The VPS user `rob` has narrowly scoped ACL-based read access to the required Hermes profile and vault material.
+SSH authenticates as VPS user `rob`; the source-side `rsync` is then executed
+as the container's `hermes` user (UID/GID `988`) through the existing container
+manager access. It has only the access Hermes itself has to the two mounted
+content locations. This avoids depending on host ACL inheritance, which can be
+defeated when Hermes atomically creates a file with mode `0600`.
 
-The backup does not use remote `sudo`. Do not add `sudo -S`, store VPS passwords in the script, or use an unrestricted passwordless root credential to make the backup work.
-
-If a backup fails with a permission error, inspect the relevant ACL on the VPS
-rather than weakening the backup authentication design. Use `namei -l` to find
-the blocked path and `getfacl -p` on that directory or file. A named `rob` ACL
-entry may still grant no effective access if its ACL mask is `---`; check the
-effective permissions before making a narrow correction. Avoid recursive or
-world-readable permission changes.
+The backup does not use remote `sudo`, store VPS passwords in the script, or
+make vault content world-readable. Do not add unrestricted passwordless root
+access to make backups work.
 
 ## What is intentionally excluded
 

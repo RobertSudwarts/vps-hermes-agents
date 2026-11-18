@@ -22,7 +22,7 @@ live Compose project. Rob runs VPS commands himself.
 Run from this repository on Rob's development machine:
 
 ```bash
-./scripts/vps-hermes-agent-backup.sh
+./scripts/backup.sh
 ```
 
 It copies the agents' SOUL files, selected memories and skills, plus both vaults,

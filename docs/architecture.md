@@ -59,7 +59,7 @@ The container runs with `no-new-privileges` and does not receive the Docker sock
 
 The Hub uses a locally built image derived from `nousresearch/hermes-agent:latest`.
 
-The derived image includes the minimum useful LaTeX toolchain for Eric’s CV workflow, including `latexmk`, `texlive-latex-extra` and recommended fonts. This allows Eric to compile and inspect role-specific PDF CVs within the container.
+The derived image includes the minimum useful LaTeX toolchain for Eric’s CV workflow, including `latexmk`, `texlive-latex-extra` and recommended fonts, plus `rsync` for the content-backup source. This allows Eric to compile and inspect role-specific PDF CVs within the container while the backup runs as the unprivileged container user.
 
 The image build definition belongs in the Compose-project directory. The image should be rebuilt after intentional changes to the Dockerfile or after reviewing upstream Hermes updates.
 

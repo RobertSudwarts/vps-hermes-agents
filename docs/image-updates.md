@@ -4,8 +4,9 @@
 
 Hermes runs here in a locally built image derived from
 `nousresearch/hermes-agent:latest`. The local layer adds LaTeX for Eric's CV
-workflow. Both agents share this image and one gateway, so an image replacement
-briefly interrupts both Discord bots.
+workflow and `rsync` for the content-backup source. Both agents share this
+image and one gateway, so an image replacement briefly interrupts both Discord
+bots.
 
 Check upstream stable releases every few weeks, and sooner for a relevant fix.
 Read the release notes and upgrade notes before choosing an update. Upstream's
@@ -78,7 +79,7 @@ Use the checks in the [runbook](runbook.md) to confirm:
 - the default-profile gateway serves both named profiles, without starting
   separate gateways;
 - Bramble and Eric each respond through Discord and can access their vault;
-- Eric's LaTeX toolchain remains available;
+- Eric's LaTeX toolchain and the backup's `rsync` binary remain available;
 - the container is using the newly built image ID.
 
 The LaTeX check is:
@@ -86,6 +87,13 @@ The LaTeX check is:
 ```bash
 docker compose exec -T -u 988:988 agent \
   sh -lc 'command -v latexmk && latexmk --version | head -n 1'
+```
+
+Also verify the backup dependency:
+
+```bash
+docker compose exec -T -u 988:988 agent \
+  sh -lc 'command -v rsync && rsync --version | head -n 1'
 ```
 
 If verification fails, preserve the logs and the previous image. Do not assume
