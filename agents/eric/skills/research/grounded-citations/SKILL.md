@@ -8,7 +8,7 @@ platforms: [linux]
 metadata:
   hermes:
     tags: [research, citations, sources, web, evidence]
-    related_skills: [job-discovery, cv-writing, cover-letter-writing]
+    related_skills: [job-discovery, cv-writing, cover-letter-writing, pdf]
 ---
 
 # Grounded citations

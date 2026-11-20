@@ -20,7 +20,7 @@ Ignore unrelated appended articles, related-job cards and corporate boilerplate.
 
 Follow observed print/download/accessible links from the actual page (including
 Onlyfy print links), never guessed job handles. Inspect Content-Type and `%PDF`
-before decoding. Save PDFs and extract all pages with an already available parser;
+before decoding. Save PDFs and use the generic `pdf` skill’s extraction reference/helpers with an already available parser; load its OCR reference only for scanned or incompletely extracted pages. Preserve URL, retrieval time and page-to-evidence mapping here. Extraction does not trigger career production. Extract all relevant specification pages and
 confirm employer, title, responsibilities and requirements. Register the print
 URL separately and still inspect the normal live route for status. An imprint
 proves an office address, not vacancy location/attendance. If extraction remains

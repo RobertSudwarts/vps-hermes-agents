@@ -32,6 +32,10 @@ For a **focused open application**, propose bounded work grounded in verified em
 
 ## Construct the Markdown
 
+Follow [the Markdown output contract](markdown-format.md) before approval so the
+saved draft is compatible with the approved builder. If Rob requests a different
+structure, resolve that explicitly rather than silently changing it in production.
+
 Use About me, Skills, Experience and Education in that order unless Rob requests otherwise:
 
 - **About me:** a plain factual narrative of contribution, scope and evidence. Avoid synthetic specialist labels and adjective-heavy biography. Financial ownership may lead for investment work; engineering may lead for engineering work. A newly confirmed fact does not automatically belong in the opening.

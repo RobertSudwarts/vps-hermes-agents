@@ -7,7 +7,7 @@ platforms: [linux]
 metadata:
   hermes:
     tags: [cv, pdf, latex, applications, production]
-    related_skills: [cv-writing]
+    related_skills: [cv-writing, pdf]
 ---
 
 # Career PDF production
@@ -18,8 +18,8 @@ Use this skill only when Rob explicitly asks to build or compile a PDF from an a
 
 1. Identify the exact application and approved Markdown input.
 2. Create the next `revisions/rNNN/` directory without overwriting an existing revision.
-3. Copy the exact Markdown input into that revision before building. This frozen copy is the source of truth for the PDF.
-4. Use the approved ModernCV template and shared builder under `/vault/eric/templates/moderncv/`.
+3. Copy the exact Markdown input into that revision before building and verify its hash against the approved file. Validate its supported structure read-only; incompatibility returns to review, never silent repair. Pass this frozen copy, not the mutable working file, to the builder.
+4. Use the explicitly approved frozen ModernCV release under `/vault/eric/templates/moderncv/` (currently v003; v004 is a candidate, not an automatic upgrade). Read that release’s build contract; preserve releases and existing artifacts.
 5. Follow `references/latex-quality.md`.
 6. Retain a SHA-256 manifest for the frozen input and generated revision artifacts. Report artifact paths, page count, completed checks, warnings and any verification limitation.
 

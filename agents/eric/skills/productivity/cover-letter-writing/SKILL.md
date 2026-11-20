@@ -7,7 +7,7 @@ platforms: [linux]
 metadata:
   hermes:
     tags: [career, applications, cover-letter, writing]
-    related_skills: [cv-writing, grounded-citations]
+    related_skills: [cv-writing, grounded-citations, pdf]
 ---
 
 # Cover-letter writing

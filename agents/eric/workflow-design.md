@@ -114,6 +114,12 @@ history, research the vacancy or rebuild a document without a task-specific need
 
 ## Related work and selective loading
 
+The generic `pdf` skill supplies extraction, rendering, forms and document
+mechanics. It does not own career content or bypass the approval/frozen-input
+boundaries. Research keeps evidence provenance; CV and letter production retain
+their respective owners. Missing rendering is reported explicitly, not treated
+as a passed visual check or permission to install tools or upload documents.
+
 `cv-writing` also owns short application-form answers and their scoped retries.
 Use the exact questions and limits, supported examples and question-specific
 factual boundaries. Keep personal motivation or difficulty distinct from
