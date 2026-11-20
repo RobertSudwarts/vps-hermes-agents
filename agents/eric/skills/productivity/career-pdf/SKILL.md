@@ -21,9 +21,8 @@ Use this skill only when Rob explicitly asks to build or compile a PDF from an a
 3. Copy the exact Markdown input into that revision before building. This frozen copy is the source of truth for the PDF.
 4. Use the approved ModernCV template and shared builder under `/vault/eric/templates/moderncv/`.
 5. Follow `references/latex-quality.md`.
-6. Report artifact paths, page count, completed checks, warnings and any verification limitation.
+6. Retain a SHA-256 manifest for the frozen input and generated revision artifacts. Report artifact paths, page count, completed checks, warnings and any verification limitation.
 
 Do not reread the role to change the hiring argument, alter `working/cv.md`, modify protected career sources, change the shared template, or create a submission record.
 
-If a build needs wording, factual, typography, margin or template changes, stop and return the issue to `cv-writing`. A build may use only narrowly scoped, recorded, revision-local layout corrections.
-
+If a build needs wording or factual changes, stop and return the issue to `cv-writing` for Markdown revision and renewed approval. If it needs typography, margin or shared-template changes, stop and report a separately scoped production/template issue to Rob. Do not alter the approved Markdown or shared template. A build may use only narrowly scoped, recorded, revision-local layout corrections that preserve the frozen text, approved typography, margins and template release.
