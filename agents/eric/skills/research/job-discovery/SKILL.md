@@ -1,8 +1,9 @@
 ---
 name: job-discovery
-description: Find, revisit and assess career opportunities for Rob while preserving a compact, evidence-backed opportunity register.
+description: Find, refresh, compare and assess career opportunities for Rob, or report the saved pipeline. Maintain the existing search watchlist and opportunity register; do not apply.
 version: 2.0.0
 author: Eric
+license: MIT
 platforms: [linux]
 metadata:
   hermes:
@@ -12,34 +13,41 @@ metadata:
 
 # Job discovery
 
-Use this skill to find opportunities, refresh a known pipeline, or assess a named role. It owns discovery and fit assessment; it does not draft CVs, cover letters, applications or outreach.
+`/vault/eric/workflow-design.md` governs shared boundaries. Under
+`/vault/eric/Research/job-search/`, `README.md` owns the active search brief,
+`sources.json` the source watchlist and `opportunities.json` the working register.
+Reuse them; no competing biography, tracker or dashboard. Protected career facts
+remain under `/vault/eric/CV/reference/CV/source/`; use relevant confirmed
+supplements without editing those sources or frozen application/research records.
 
-## Sources of truth
+## Select one route
 
-- `/vault/eric/Research/job-search/README.md` defines the active search brief.
-- `sources.json` is the source watchlist and `opportunities.json` is the working register.
-- `/vault/eric/CV/` is the protected factual career record. Do not create a competing biography or modify it during discovery.
+- Saved pipeline/“what next?”: [pipeline reporting](references/pipeline-reporting.md). No automatic fresh scan.
+- Routine refresh of validated sources: [incremental search](references/incremental-search.md).
+- New bounded pass, substantive reassessment, employer-board comparison or open-application choice: [bounded assessment](references/bounded-assessment.md).
+- Source/adapter onboarding or change: [source onboarding](references/source-onboarding.md).
+- Requested recruiter/contact research or outreach draft: [human outreach research](references/human-outreach-research.md). Research/drafting never authorises sending.
+- Any decision update: relevant section of [register rules](references/register-rules.md).
+- Helper operation: [CLI/API contract](scripts/README.md); [compact commands](references/token-lean-commands.md) only as needed. Helpers collect and compare; they do not assess fit.
 
-Rob chooses whether to pursue an opportunity. A recommendation is an assessment, not a veto or an application decision.
+## Standing judgement and boundaries
 
-## Choose the smallest route
+Follow the current brief. Rank substantive financial-markets, investment, risk
+and trading work ahead of generic AI/backend matches unless Rob changes that
+priority. Assess mutual value from actual responsibilities and hands-on
+engineering, not titles alone. If asked for one role, recommend one with its
+material reservation. Rob chooses; a research shortlist is not an application.
 
-- **Pipeline snapshot:** read the saved register and report its recorded state. Do not turn it into a fresh scan.
-- **Incremental scan:** refresh selected validated sources mechanically, inspect changes, then review only new or materially changed candidates.
-- **Bounded role pass:** use `references/bounded-assessment.md`; declare a shared review cap before delegating work.
-- **New source or parser:** use `references/source-onboarding.md`; do not install software or change a source contract without permission.
+Exclude explicitly mandatory professional German at the exact-vacancy level;
+retain preferred/unspecified German with uncertainty. English adverts do not
+prove working language. Office lists/remote flags do not prove Austria eligibility.
+Distinguish direct evidence, transferability and gaps; never invent expertise.
 
-## Assessment rules
+Use `grounded-citations` for primary evidence and current verification before a
+new/reassessed recommendation; dated saved-state snapshots are different. Keep
+feeds/history on disk and retrieve only selected fields and missing facts.
+Do not claim token savings without usage/cache measurements.
 
-Screen cheaply before deeper work: role status, location, workplace language, seniority and role-defining work. Verify a promising recommendation against the primary advert and actual career evidence.
-
-Exclude roles where professional German is explicitly mandatory. Flag German when it is preferred or unclear. Do not infer eligibility, language, salary, seniority or technical proficiency from silence.
-
-Keep decisions precise: `shortlisted` for a positive research judgement, `reviewed` for a conditional lead, and `excluded` only with a recorded concrete reason. Preserve prior decisions and application links.
-
-## Cost discipline
-
-Keep feeds, source bodies and register history in files. Use deterministic collection, deduplication and diffing before model review. Give each delegated worker a compact, bounded candidate packet; do not hand it the full register, all source transcripts or an open-ended search brief.
-
-Return a concise shortlist with exact primary links, fit, reservation, observation date and any completeness warning.
-
+No unsolicited applications, outreach, uploads, paused-account access,
+installation, schedule/configuration changes or autonomous skill mutation.
+Keep secrets and personal career documents out of network requests.
