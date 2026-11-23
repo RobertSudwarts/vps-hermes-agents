@@ -17,7 +17,7 @@ metadata:
 `/vault/eric/Research/job-search/`, `README.md` owns the active search brief,
 `sources.json` the source watchlist and `opportunities.json` the working register.
 Reuse them; no competing biography, tracker or dashboard. Protected career facts
-remain under `/vault/eric/CV/reference/CV/source/`; use relevant confirmed
+remain under `/vault/eric/CV/`, as defined by `/vault/eric/CV/cv_system.md`; use relevant confirmed
 supplements without editing those sources or frozen application/research records.
 
 ## Select one route

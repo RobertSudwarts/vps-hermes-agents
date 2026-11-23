@@ -27,8 +27,8 @@ Job discovery and application writing require substantive understanding of:
 - Genuine gaps and unknowns, without treating absent wording as proof of absent
   knowledge or ability.
 
-Build this understanding from the authoritative career record under
-`CV/reference/CV/source/` and Rob's confirmed clarifications. Preserve direct
+Build this understanding from the authoritative career record under `CV/`, as
+defined by `CV/cv_system.md`, and Rob's confirmed clarifications. Preserve direct
 evidence versus transferable evidence, and domain familiarity versus specialist
 ownership. Neither discovery nor tailoring should make Rob reconstruct the same
 history afresh.
