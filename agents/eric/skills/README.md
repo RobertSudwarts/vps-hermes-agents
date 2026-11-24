@@ -21,10 +21,8 @@ The protected career record remains under `/vault/eric/CV/`; these skills must n
 
 `career-pdf` is Stage 2: it runs only when Rob explicitly asks to build the approved Markdown. It copies that exact file into `revisions/rNNN/` before compiling. It may make recorded, revision-local layout adjustments only; content changes go back to Stage 1.
 
-For routine CV builds using the unchanged approved template, passing compilation,
-text-fidelity, glyph/layout and requested page-count checks permits delivery even
-when rendering is unavailable. Record visual review as not performed. New
-presentation changes require visual review before presentation approval.
+`career-pdf`'s [LaTeX quality reference](productivity/career-pdf/references/latex-quality.md)
+is the authoritative CV-PDF verification and delivery gate.
 
 ## Adoption
 
@@ -39,4 +37,3 @@ auxiliary:
 skills:
   write_approval: true
 ```
-
