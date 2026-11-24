@@ -20,6 +20,14 @@ Reuse them; no competing biography, tracker or dashboard. Protected career facts
 remain under `/vault/eric/CV/`, as defined by `/vault/eric/CV/cv_system.md`; use relevant confirmed
 supplements without editing those sources or frozen application/research records.
 
+## Request shorthand: SCOUT
+
+At Rob's request, **SCOUT** is the shorthand for:
+
+> Find up to ten new, worthwhile role possibilities, prioritising my financial experience alongside my engineering capabilities. Expand beyond previously searched employers where useful. Include credible stretches, explain the material reservations, and don’t pad the list if fewer survive scrutiny.
+
+Use this meaning when Rob invokes SCOUT as an actual search instruction, not when he quotes, defines or discusses the codeword. Ten is a maximum of retained worthwhile possibilities, not a quota of specifications read. Set a bounded research budget using the assessment route; report a shortfall honestly if that budget is reached. Keep named vacancies separate from speculative employer prospects; the latter do not fill the named-role count. All current geography, language, exclusions, pauses, verification and no-outreach boundaries remain intact. Defining the shorthand does not itself launch a search.
+
 ## Select one route
 
 - Saved pipeline/“what next?”: [pipeline reporting](references/pipeline-reporting.md). No automatic fresh scan.
