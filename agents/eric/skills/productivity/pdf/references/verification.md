@@ -19,6 +19,12 @@ inspect `--help` for exact flags and outputs. Not every helper emits the same sc
 
 ## Render and inspect
 
+For routine CV builds, `career-pdf` owns the delivery gate: an unchanged approved
+template plus passed automated checks permits delivery without available rendering.
+Record the limitation; do not turn the generic visual-review guidance below into
+an extra approval or installation gate. New presentation changes and unfamiliar
+layout corrections still require visual review before presentation approval.
+
 `pdf_page_image.py` takes **1-based** page ranges. `_raster.py` is its shared
 backend module, not a CLI. It selects pypdfium2 then pdftoppm when available;
 backend errors can still fail rather than automatically recover.

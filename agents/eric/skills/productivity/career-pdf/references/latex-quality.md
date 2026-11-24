@@ -15,7 +15,7 @@ Compile again only when the builder requires it. Keep optional page breaks and o
 
 Do not install software, change installed packages, upload private material, change shared template releases, or alter reviewed wording without explicit permission.
 
-## Required checks
+## Required automated checks
 
 - Confirm the final PDF exists at the requested path and has the intended page count.
 - Inspect the compiler log. A non-zero exit, missing character, incorrect extracted character, or unresolved overfull/underfull box warning is a failed build.
@@ -23,7 +23,38 @@ Do not install software, change installed packages, upload private material, cha
 - Compare the extracted text with the frozen Markdown closely enough to catch missing or altered content. Treat known headers, footers, whitespace and discretionary hyphenation carefully; do not broadly strip text to make a check pass.
 - Check factual fields in the generated TeX against the frozen Markdown. Technical success does not authorise a content change.
 
-Use the generic `pdf` skill’s selective verification reference/helpers for extraction and page rendering; do not load its general creation or installation procedures. Before visual review, check whether `pypdfium2` imports or `pdftoppm` is available. If neither is available, do not invoke rendering helpers, retry alternatives, install software or upload the PDF. Report that visual inspection was unavailable. If a renderer is available, inspect every page for clipping, wrapping, spacing, page breaks and heading/bullet continuity. Inspect `pdf_page_image.py` JSON: exit 0 with `rendered: false` means unavailable; only `rendered: true` and actual page images establish rendering. Rendering itself is not visual approval.
+## Visual review and delivery gate
+
+For routine builds from approved Markdown using the unchanged approved frozen
+template and supported existing layout options, passing all automated checks
+above is sufficient for delivery. A missing renderer is not a failed build and
+must not block delivery, trigger another approval request or repeated attempts
+to install/find tools. Preserve the frozen text and record visual inspection as
+not performed. Compilation alone is insufficient; text fidelity, clean glyph/
+layout checks and the requested page count still must pass. Do not ignore a known
+visual defect merely because automated checks pass.
+
+Use the generic `pdf` verification helpers selectively. Check existing rendering
+capability once when unknown; reuse a known unavailable result unless the
+environment changes. If available, render and inspect every page for clipping,
+wrapping, spacing, page breaks and heading/bullet continuity. Inspect helper JSON:
+exit 0 with `rendered: false` means unavailable; `rendered: true` and actual images
+establish rendering, not visual approval. If rendering fails, record the actual
+failure; for an otherwise passing routine build, deliver with that limitation
+rather than retrying indefinitely or changing software/uploading the PDF.
+
+New/changed templates, typography, margins or unfamiliar layout corrections
+require visual review before presentation approval. Supported options within the
+unchanged approved builder, such as an existing page-break option, do not by
+themselves create a new template. If a change requires visual review and local
+rendering is unavailable, provide a clearly labelled review candidate for Rob's
+inspection; do not mark the presentation approved or the visual check passed.
+Separately scoped presentation changes still require Rob's authority.
+
+Keep routine delivery concise, for example: “PDF ready. Compilation, text fidelity
+and page-count checks passed. Visual inspection wasn't available.” Mention the
+limitation once with the delivered artifact; do not repeatedly warn about the
+same missing renderer. Record detailed check results in the revision, not chat.
 
 ## Bounded recovery
 

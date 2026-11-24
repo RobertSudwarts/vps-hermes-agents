@@ -96,6 +96,20 @@ presentation review; they are not CV editorial tasks. Report verification
 limitations honestly. Actual page fit is checked on the PDF, not inferred from
 Markdown.
 
+For routine CV builds from approved Markdown using the unchanged approved frozen
+template and supported existing layout options, successful compilation, clean
+glyph/layout checks, text-fidelity checks and the requested page count are
+sufficient for delivery. Missing visual rendering alone does not block delivery
+or require another approval, repeated retries or tool installation. Record visual
+inspection as not performed, never passed. This exception does not waive failed
+automated checks or a known visual defect.
+
+New or changed templates, typography, margins and unfamiliar layout corrections
+require visual review before presentation approval. If local rendering is
+unavailable for such a change, provide a clearly labelled review candidate for
+Rob to inspect; do not claim the presentation is approved. Routine CV builds do
+not reopen approval of an unchanged established presentation.
+
 ## Constructive writing and factual preservation
 
 Application prose may be rewritten, synthesised, combined, shortened or

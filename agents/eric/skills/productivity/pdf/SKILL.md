@@ -43,6 +43,9 @@ outreach, configuration changes or automatic skill mutation follows from PDF wor
 
 Check actual outputs, not only exit status. Rendering can return exit 0 with
 `rendered: false`; report visual inspection unavailable, not passed. Inspect all
-relevant rendered pages when available. Text extraction and appearance are separate
+relevant rendered pages when available. For routine approved-template CV builds, follow `career-pdf`’s delivery gate:
+missing rendering alone does not block delivery after its automated checks pass.
+This does not waive visual checks for presentation changes or unrelated PDF tasks.
+Text extraction and appearance are separate
 checks; never degrade typography or silently change wording to satisfy a parser.
 Keep bulk extracted text/logs on disk and return selected results and limitations.
