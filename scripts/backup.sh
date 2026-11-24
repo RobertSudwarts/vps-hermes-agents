@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# before running this you need to unlock the ssh-key in the terminal
+# $ eval "$(ssh-agent -s)"
+# $ ssh-add ~/.ssh/netcup_vps
 set -euo pipefail
 
 step='initialising'
